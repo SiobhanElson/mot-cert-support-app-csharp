@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using static RestAssured.Dsl;
 using System.Net;
 
-namespace Timesheet.Tests.Api;
+namespace Timesheet.Test.Api;
 
 
-{
+
     public class AuthAPITest
     {
 
@@ -25,7 +25,9 @@ namespace Timesheet.Tests.Api;
                                 .Then()
                                 .Extract()
                                 .Response();
+
+        Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
         }
 
     }
-}
+

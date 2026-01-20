@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Timesheet.Tests.Api
+namespace Timesheet.Test.Api
 {
     public class Login
     {

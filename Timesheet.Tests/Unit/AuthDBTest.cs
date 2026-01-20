@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Timesheet.DB;
 using Timesheet.Models.Auth;
 
-namespace Timesheet.Tests.Unit
+namespace Timesheet.Test.Unit
 {
     public class AuthDBTest
     {
