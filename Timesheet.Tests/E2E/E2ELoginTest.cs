@@ -16,8 +16,13 @@ namespace Timesheet.Test.E2E
         [Test]
         public void TestLoginReturnsCorrectPage()
         {
+            ChromeOptions options = new ChromeOptions();
+            options.BinaryLocation = @"C:\Program Files (X86)\Google\Chrome\Application\chrome.exe"; // Path to stable Chrome
+            options.AddArguments("--headless");
+
+            IWebDriver _webDriver = new ChromeDriver(options);
             new DriverManager().SetUpDriver(new ChromeConfig());
-            IWebDriver _webDriver = new ChromeDriver();
+           
 
             _webDriver.Navigate().GoToUrl("http://localhost:8080");
 
