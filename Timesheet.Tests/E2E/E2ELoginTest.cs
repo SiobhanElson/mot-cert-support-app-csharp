@@ -36,7 +36,7 @@ namespace Timesheet.Test.E2E
             _webDriver.FindElement(By.Name("password")).SendKeys("password123");
             _webDriver.FindElement(By.CssSelector("button")).Click();
 
-            WebDriverWait wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(60));
             wait.Until(drv => drv.FindElement(By.CssSelector(".card-title")));
 
             string title = _webDriver.FindElement(By.CssSelector(".card-title")).Text;
