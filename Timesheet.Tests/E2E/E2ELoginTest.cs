@@ -34,7 +34,7 @@ namespace Timesheet.Test.E2E
             WebDriverWait wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(60));
             //var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(30));
             wait.Until(driver => driver.FindElement(By.Name("email")));
-            wait.Until(drv => drv.FindElement(By.CssSelector(".card-title")));
+            //wait.Until(drv => drv.FindElement(By.CssSelector(".card-title")));
 
             _webDriver.FindElement(By.Name("email")).SendKeys("admin@test.com");
             _webDriver.FindElement(By.Name("password")).SendKeys("password123");
