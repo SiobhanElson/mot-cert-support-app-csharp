@@ -16,4 +16,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include=".github\workflows\build_test.yml" />
+  </ItemGroup>
+
 </Project>
