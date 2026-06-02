@@ -37,6 +37,8 @@ namespace Timesheet.Test.E2E
             _webDriver.FindElement(By.CssSelector("button")).Click();
 
             WebDriverWait wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(60));
+            var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(30));
+            wait.Until(driver => driver.FindElement(By.Name("email")));
             wait.Until(drv => drv.FindElement(By.CssSelector(".card-title")));
 
             string title = _webDriver.FindElement(By.CssSelector(".card-title")).Text;
