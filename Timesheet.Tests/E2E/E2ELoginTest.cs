@@ -31,15 +31,14 @@ namespace Timesheet.Test.E2E
             new DriverManager().SetUpDriver(new ChromeConfig());
 
             _webDriver.Navigate().GoToUrl("http://localhost:8080");
-
-            _webDriver.FindElement(By.Name("email")).SendKeys("admin@test.com");
-            _webDriver.FindElement(By.Name("password")).SendKeys("password123");
-            _webDriver.FindElement(By.CssSelector("button")).Click();
-
             WebDriverWait wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(60));
             //var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(30));
             wait.Until(driver => driver.FindElement(By.Name("email")));
             wait.Until(drv => drv.FindElement(By.CssSelector(".card-title")));
+
+            _webDriver.FindElement(By.Name("email")).SendKeys("admin@test.com");
+            _webDriver.FindElement(By.Name("password")).SendKeys("password123");
+            _webDriver.FindElement(By.CssSelector("button")).Click();
 
             string title = _webDriver.FindElement(By.CssSelector(".card-title")).Text;
 
