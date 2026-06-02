@@ -16,13 +16,19 @@ namespace Timesheet.Test.E2E
         [Test]
         public void TestLoginReturnsCorrectPage()
         {
-            ChromeOptions options = new ChromeOptions();
-            options.BinaryLocation = @"C:\Program Files (X86)\Google\Chrome\Application\chrome.exe"; // Path to stable Chrome
-            options.AddArguments("--headless");
+            //ChromeOptions options = new ChromeOptions();
+            //options.BinaryLocation = @"C:\Program Files (X86)\Google\Chrome\Application\chrome.exe"; // Path to stable Chrome
+            //options.AddArguments("--headless");
+
+            var options = new ChromeOptions();
+            options.AddArgument("--headless=new");
+            options.AddArgument("--no-sandbox");
+            options.AddArgument("--disable-dev-shm-usage");
+
+            using var driver = new ChromeDriver(options);
 
             IWebDriver _webDriver = new ChromeDriver(options);
             new DriverManager().SetUpDriver(new ChromeConfig());
-           
 
             _webDriver.Navigate().GoToUrl("http://localhost:8080");
 
